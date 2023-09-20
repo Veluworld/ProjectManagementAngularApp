@@ -1,0 +1,32 @@
+
+<br>
+<body>
+    <h1 style="font-weight:bold">Assigned Tasks</h1>
+    <br>
+    
+    <table class="content-table">
+        <thead>          
+            <tr>
+                <th scope="col">taskId</th>
+                <th scope="col">memberName</th>
+                <th scope="col">taskName</th>
+                <th scope="col">deliverables</th>
+                <th scope="col">startDate</th>
+                <th scope="col" >endDate</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="tasklist.data.length>0; else norecords">
+            <tr *ngFor="let x of tasklist.data">
+              <th scope="row">{{x.taskId}}</th>
+              <td>{{x.memberName}}</td>
+              <td>{{x.taskName}}</td>
+              <td>{{x.deliverables}}</td>
+              <td>{{x.startDate}}</td>
+              <td>{{x.endDate}}</td>             
+            </tr>
+        </tbody>
+        <ng-template #norecords>
+           <h2 style="text-align: center;margin-right: -502%;"> No data available.</h2>
+          </ng-template>
+    </table>    
+</body>
